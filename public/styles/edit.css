@@ -1,0 +1,85 @@
+/* Styles globaux pour le body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Styles pour le bouton Accueil */
+a button {
+    position: fixed; /* Position fixe pour rester en haut à gauche */
+    top: 20px;
+    left: 20px; /* Déplacé à gauche */
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px; /* Réduit la taille du bouton */
+    cursor: pointer;
+    font-size: 14px; /* Réduit la taille du texte */
+    text-decoration: none;
+    z-index: 1000; /* Assure que le bouton est au-dessus des autres éléments */
+}
+
+a button:hover {
+    background-color: #0056b3; /* Bleu foncé */
+}
+
+/* Styles pour le formulaire */
+form {
+    margin: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Styles pour les cases à cocher */
+div label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px; /* Réduit la taille du texte */
+}
+
+input[type="checkbox"] {
+    display: none; /* Masquer les cases à cocher */
+}
+
+/* Styles pour les boutons transformés des cases à cocher */
+div label input[type="checkbox"] + span {
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px; /* Réduit la taille du bouton */
+    cursor: pointer;
+    font-size: 14px; /* Réduit la taille du texte */
+    display: inline-block;
+    text-align: center;
+}
+
+div label input[type="checkbox"]:checked + span {
+    background-color: #e01010; /* Rouge lorsqu'il est sélectionné */
+}
+
+/* Styles pour le bouton Enregistrer */
+button[type="submit"] {
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px; /* Réduit la taille du bouton */
+    cursor: pointer;
+    font-size: 14px; /* Réduit la taille du texte */
+    width: 100px; /* Réduit la largeur à 100px */
+    text-align: center;
+    margin-top: 20px;
+    position: absolute; /* Positionnement absolu pour le placer à droite */
+    right: 20px; /* Espace de 20px depuis la droite */
+}
+
+button[type="submit"]:hover {
+    background-color: #e01010; /* Rouge lors du survol */
+}

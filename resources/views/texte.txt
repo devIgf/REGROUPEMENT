@@ -1,0 +1,42 @@
+<a href="{{route('admin.dashboard')}}" >
+   <button>
+    Accueil
+   </button>
+</a>
+
+@foreach($clients as $user)
+<form action="{{ route('admin.updateButtonPermissions', $user->id) }}" method="POST">
+    @csrf
+    @php
+        // Charger les permissions du client (le $user que l'admin modifie)
+        $buttonPermissions = json_decode($user->button_permissions, true) ?? [];
+    @endphp
+
+    <div>
+        <label>
+            <input type="checkbox" name="button_permissions[]" value="button1"
+            {{ in_array('button1', $buttonPermissions) ? 'checked' : '' }}>
+            Button 1
+        </label>
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" name="button_permissions[]" value="button2"
+            {{ in_array('button2', $buttonPermissions) ? 'checked' : '' }}>
+            Button 2
+        </label>
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" name="button_permissions[]" value="button3"
+            {{ in_array('button3', $buttonPermissions) ? 'checked' : '' }}>
+            Button 3
+        </label>
+    </div>
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+@endforeach
